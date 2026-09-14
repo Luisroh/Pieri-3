@@ -106,11 +106,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Carpeta donde collectstatic recolecta TODOS los estáticos (producción)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Carpetas de origen durante desarrollo
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'loveOfMyLife/static'),
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'loveOfMyLife/static')] 
-
